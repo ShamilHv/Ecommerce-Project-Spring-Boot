@@ -39,7 +39,3 @@ Admin panel for product and order management
 User profile and order history
 
 Integration tests and unit tests
-
-**📫 Contributions**
-
-Currently, this is a personal project. Contributions are not yet open, but feel free to share suggestions or ideas via Issues.
