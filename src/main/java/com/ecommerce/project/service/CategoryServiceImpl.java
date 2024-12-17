@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
 @Service
 public class CategoryServiceImpl implements CategoryService {
 
@@ -19,18 +18,18 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public List<Category> getAllCategories() {
         List<Category> categories = categoryRepository.findAll();
-        if(categories.isEmpty()){
+        if (categories.isEmpty()) {
             throw new APIException("No category found");
-        }else{
+        } else {
             return categories;
         }
     }
 
     @Override
     public void createCategory(Category category) {
-        Category savedCategory= categoryRepository.findByCategoryName(category.getCategoryName());
-        if(savedCategory != null) {
-            throw new APIException("Category : "+category.getCategoryName()+" already exists");
+        Category savedCategory = categoryRepository.findByCategoryName(category.getCategoryName());
+        if (savedCategory != null) {
+            throw new APIException("Category : " + category.getCategoryName() + " already exists");
         }
         categoryRepository.save(category);
     }
@@ -47,11 +46,10 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public Category updateCategory(Category category, Long categoryId) {
 
-        Category savedCategory = categoryRepository.findById(categoryId).orElseThrow(()-> new ResourceNotFoundException("Category", "CategoryId", categoryId));
+        Category savedCategory = categoryRepository.findById(categoryId).orElseThrow(() -> new ResourceNotFoundException("Category", "CategoryId", categoryId));
 
         category.setCategoryId(categoryId);
         savedCategory = categoryRepository.save(category);
         return savedCategory;
-
     }
 }

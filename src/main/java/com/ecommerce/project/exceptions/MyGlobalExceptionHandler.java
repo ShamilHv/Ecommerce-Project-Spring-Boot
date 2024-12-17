@@ -35,5 +35,4 @@ public class MyGlobalExceptionHandler {
         String message=e.getMessage();
         return new ResponseEntity<String>(message, HttpStatus.BAD_REQUEST);
     }
-
 }
