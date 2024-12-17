@@ -45,9 +45,7 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public Category updateCategory(Category category, Long categoryId) {
-
         Category savedCategory = categoryRepository.findById(categoryId).orElseThrow(() -> new ResourceNotFoundException("Category", "CategoryId", categoryId));
-
         category.setCategoryId(categoryId);
         savedCategory = categoryRepository.save(category);
         return savedCategory;
