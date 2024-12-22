@@ -68,7 +68,6 @@ public class ProductServiceImpl implements ProductService {
         Pageable pageDetails = PageRequest.of(pageNumber, pageSize, sortByAndOrder);
         Page<Product> pageProducts = productRepository.findAll(pageDetails);
 
-
         List<Product> products = pageProducts.getContent();
         List<ProductDTO> productDTOS = products.stream().map(product -> modelMapper.map(product, ProductDTO.class)).toList();
         ProductResponse productResponse = new ProductResponse();
@@ -93,7 +92,7 @@ public class ProductServiceImpl implements ProductService {
 
         List<Product> products = pageProducts.getContent();
         if (products.isEmpty()) {
-            throw new APIException(category.getCategoryName() + " does not have any products" );
+            throw new APIException(category.getCategoryName() + " does not have any products");
         }
         List<ProductDTO> productDTOS = products.stream().map(product -> modelMapper.map(product, ProductDTO.class)).toList();
         ProductResponse productResponse = new ProductResponse();
@@ -111,7 +110,7 @@ public class ProductServiceImpl implements ProductService {
 
         Sort sortByAndOrder = sortOrder.equalsIgnoreCase("asc") ? Sort.by(sortBy).ascending() : Sort.by(sortBy).descending();
         Pageable pageDetails = PageRequest.of(pageNumber, pageSize, sortByAndOrder);
-        Page<Product> pageProducts = productRepository.findByProductNameLikeIgnoreCase('%'+keyword+'%', pageDetails);
+        Page<Product> pageProducts = productRepository.findByProductNameLikeIgnoreCase('%' + keyword + '%', pageDetails);
         List<Product> products = pageProducts.getContent();
         if (products.isEmpty()) {
             throw new APIException("No Match Found");
@@ -157,8 +156,5 @@ public class ProductServiceImpl implements ProductService {
         productFromDb.setImage(fileName);
         Product savedProduct = productRepository.save(productFromDb);
         return modelMapper.map(savedProduct, ProductDTO.class);
-
     }
-
-
 }
