@@ -13,21 +13,23 @@ import java.util.List;
 
 @Entity
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-@Table(name="products")
+@AllArgsConstructor
+@Table(name = "products")
 @ToString
 public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long productId;
+
     @NotBlank
-    @Size(min = 3, max = 50, message = "Product name must be between 3 and 50 characters")
+    @Size(min = 3, message = "Product name must contain atleast 3 characters")
     private String productName;
     private String image;
+
     @NotBlank
-    @Size(min = 10, max = 100, message = "Description name must be between 10 and 100 characters")
+    @Size(min = 6, message = "Product description must contain atleast 6 characters")
     private String description;
     private Integer quantity;
     private double price;
@@ -35,14 +37,13 @@ public class Product {
     private double specialPrice;
 
     @ManyToOne
-    @JoinColumn(name="category_id")
+    @JoinColumn(name = "category_id")
     private Category category;
 
     @ManyToOne
-    @JoinColumn(name="seller_id")
+    @JoinColumn(name = "seller_id")
     private User user;
 
-    @OneToMany(mappedBy = "product", cascade={CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.EAGER)
-    private List<CartItem> products=new ArrayList<>();
-
+    @OneToMany(mappedBy = "product", cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.EAGER)
+    private List<CartItem> products = new ArrayList<>();
 }
