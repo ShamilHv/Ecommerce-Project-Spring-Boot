@@ -70,10 +70,12 @@ public class AuthController {
                 .map(item -> item.getAuthority())
                 .collect(Collectors.toList());
 
-        UserInfoResponse response = new UserInfoResponse(userDetails.getId(),userDetails.getUsername(), roles, jwtCookie.toString());
+        UserInfoResponse response = new UserInfoResponse(userDetails.getId(),
+                userDetails.getUsername(), roles, jwtCookie.toString());
 
         return ResponseEntity.ok().header(HttpHeaders.SET_COOKIE,
-                                            jwtCookie.toString()).body(response);
+                jwtCookie.toString())
+                .body(response);
     }
 
     @PostMapping("/signup")
@@ -86,6 +88,7 @@ public class AuthController {
             return ResponseEntity.badRequest().body(new MessageResponse("Error: Email is already in use!"));
         }
 
+        // Create new user's account
         User user = new User(signUpRequest.getUsername(),
                 signUpRequest.getEmail(),
                 encoder.encode(signUpRequest.getPassword()));
@@ -127,31 +130,33 @@ public class AuthController {
     }
 
     @GetMapping("/username")
-    public String currentUserName(Authentication authentication) {
-        if(authentication!= null){
+    public String currentUserName(Authentication authentication){
+        if (authentication != null)
             return authentication.getName();
-        }else{
-            return "NULL";
-        }
+        else
+            return "";
     }
 
+
     @GetMapping("/user")
-    public ResponseEntity<?> getUserDetails(Authentication authentication) {
+    public ResponseEntity<?> getUserDetails(Authentication authentication){
         UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
 
         List<String> roles = userDetails.getAuthorities().stream()
                 .map(item -> item.getAuthority())
                 .collect(Collectors.toList());
 
-        UserInfoResponse response = new UserInfoResponse(userDetails.getId(),userDetails.getUsername(), roles);
+        UserInfoResponse response = new UserInfoResponse(userDetails.getId(),
+                userDetails.getUsername(), roles);
 
         return ResponseEntity.ok().body(response);
     }
 
     @PostMapping("/signout")
-    public ResponseEntity<?> signOutUser(Authentication authentication) {
-    ResponseCookie cookie=jwtUtils.getCleanJwtCookie();
-    return ResponseEntity.ok().header(HttpHeaders.SET_COOKIE, cookie.toString()).body(new MessageResponse("Signed out successfully!"));
+    public ResponseEntity<?> signoutUser(){
+        ResponseCookie cookie = jwtUtils.getCleanJwtCookie();
+        return ResponseEntity.ok().header(HttpHeaders.SET_COOKIE,
+                        cookie.toString())
+                .body(new MessageResponse("You've been signed out!"));
     }
-
 }
