@@ -1,34 +1,46 @@
 # Ecommerce Project - Spring Boot
 
 ## 🚀 Overview
-This project is an Ecommerce application built using Spring Boot. It’s still being worked on, and new features are being added step by step.
+Welcome to the Ecommerce Project! This application is developed using Spring Boot and serves as a platform to facilitate online shopping. It is currently under active development, with new features being continuously integrated to enhance functionality and user experience.
 
 ---
 
 ## 🔧 Tech Stack
-- **Java**: The main programming language for this project.
-- **Spring Boot**: The framework used to build the application.
-- **Maven**: Helps manage dependencies and build the project.
-- **H2 Database**: A simple database used during development.
-- **PostgreSQL**: A more advanced database planned for future use.
+- **Java**: The primary programming language powering the application.
+- **Spring Boot**: A robust backend framework simplifying the development process.
+- **Maven**: A build automation and dependency management tool.
+- **H2 Database**: Lightweight database used for development and testing.
+- **MySQL**: Targeted database for production deployment.
 
 ---
 
-## 🚧 Current Status
-- The basic setup of the project is done.
-- Categories and Products have been added to the application.
-- Controllers, Repositories, Services, and DTOs (Data Transfer Objects) have been created and are working.
-- Pagination and sorting features are completed for both Products and Categories.
-- Security features are being worked on right now.
+## 🚧 Current Features
+### Core Functionalities
+- **Project Setup**: Initial setup and configuration completed, providing a strong foundation for development.
+- **Category and Product Management**:
+  - CRUD operations for managing product categories and individual products.
+  - Fully functional with controllers, services, repositories, and DTOs.
+- **Pagination and Sorting**:
+  - Efficient data handling for categories and products, enhancing usability.
+
+### Security
+- **JWT-based Authentication**:
+  - User authentication and authorization integrated with secure JWT tokens stored in cookies.
+  - Seamless sign-in and sign-out endpoints to manage user sessions.
+
+### Shopping Cart
+- **Cart Features**:
+  - Add, remove, and view items in the shopping cart.
+  - Backend logic fully implemented to support real-time cart management.
 
 ---
 
-## 🌱 Planned Features
-- Adding user login and sign-up functionality.
-- Building a product catalog with filters to help users find items.
-- Creating a shopping cart for users to add products before buying.
-- Developing an order management system to handle purchases.
-- Building an admin panel to manage products and orders.
-- Adding user profiles so users can see their order history.
-- Creating API documentation to explain how the app works.
-- Writing tests to make sure the app works correctly and reliably.
+## 🌱 Upcoming Features
+- **Database Migration**:
+  - Transition from H2 to MySQL for improved scalability and data persistence.
+- **Order Management System**:
+  - Enable users to place, view, and manage their orders.
+- **Admin Panel**:
+  - Comprehensive dashboard for managing products, categories, and user orders.
+- **User Profiles**:
+  - Enhance user experience with personalized order history and profile management.
