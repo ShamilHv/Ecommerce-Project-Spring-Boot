@@ -1,4 +1,4 @@
-package com.ecommerce.project.service;
+package com.ecommerce.project.service.impl;
 
 import com.ecommerce.project.exceptions.APIException;
 import com.ecommerce.project.exceptions.ResourceNotFoundException;
@@ -11,6 +11,9 @@ import com.ecommerce.project.payload.ProductResponse;
 import com.ecommerce.project.repositories.CartRepository;
 import com.ecommerce.project.repositories.CategoryRepository;
 import com.ecommerce.project.repositories.ProductRepository;
+import com.ecommerce.project.service.CartService;
+import com.ecommerce.project.service.FileService;
+import com.ecommerce.project.service.ProductService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
