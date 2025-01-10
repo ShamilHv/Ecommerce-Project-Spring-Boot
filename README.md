@@ -9,8 +9,7 @@ Welcome to the Ecommerce Project! This application is developed using Spring Boo
 - **Java**: The primary programming language powering the application.
 - **Spring Boot**: A robust backend framework simplifying the development process.
 - **Maven**: A build automation and dependency management tool.
-- **H2 Database**: Lightweight database used for development and testing.
-- **MySQL**: Targeted database for production deployment.
+- **MySQL**: Used database for production deployment.
 
 ---
 
@@ -18,7 +17,7 @@ Welcome to the Ecommerce Project! This application is developed using Spring Boo
 ### Core Functionalities
 - **Project Setup**: Initial setup and configuration completed, providing a strong foundation for development.
 - **Category and Product Management**:
-  - CRUD operations for managing product categories and individual products.
+  - CRUD operations for managing product categories, user addresses and individual products.
   - Fully functional with controllers, services, repositories, and DTOs.
 - **Pagination and Sorting**:
   - Efficient data handling for categories and products, enhancing usability.
@@ -36,8 +35,6 @@ Welcome to the Ecommerce Project! This application is developed using Spring Boo
 ---
 
 ## 🌱 Upcoming Features
-- **Database Migration**:
-  - Transition from H2 to MySQL for improved scalability and data persistence.
 - **Order Management System**:
   - Enable users to place, view, and manage their orders.
 - **Admin Panel**:
