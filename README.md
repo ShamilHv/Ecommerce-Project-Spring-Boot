@@ -1,7 +1,7 @@
 # Ecommerce Project - Spring Boot
 
 ## 🚀 Overview
-Welcome to the Ecommerce Project! This application is developed using Spring Boot and serves as a platform to facilitate online shopping. It is currently under active development, with new features being continuously integrated to enhance functionality and user experience.
+Welcome to the Ecommerce Project! This application, developed using Spring Boot, serves as a comprehensive platform for online shopping. With all essential features fully implemented, this project provides a seamless and secure shopping experience for users, alongside robust tools for managing the system effectively.
 
 ---
 
@@ -9,35 +9,60 @@ Welcome to the Ecommerce Project! This application is developed using Spring Boo
 - **Java**: The primary programming language powering the application.
 - **Spring Boot**: A robust backend framework simplifying the development process.
 - **Maven**: A build automation and dependency management tool.
-- **MySQL**: Used database for production deployment.
+- **PostgreSQL**: The production database for storing application data securely and efficiently.
 
 ---
 
-## 🚧 Current Features
+## 🛠 Features
 ### Core Functionalities
-- **Project Setup**: Initial setup and configuration completed, providing a strong foundation for development.
+- **Project Setup**: Fully configured application with all essential dependencies and configurations.
 - **Category and Product Management**:
-  - CRUD operations for managing product categories, user addresses and individual products.
+  - CRUD operations for managing product categories, user addresses, and individual products.
   - Fully functional with controllers, services, repositories, and DTOs.
 - **Pagination and Sorting**:
-  - Efficient data handling for categories and products, enhancing usability.
+  - Efficient data handling for categories and products to enhance user experience.
 
 ### Security
+- **Role-Based Access Control**:
+  - Three distinct roles implemented: **User**, **Seller**, and **Admin**.
+  - Endpoints secured based on roles to ensure appropriate access levels.
 - **JWT-based Authentication**:
-  - User authentication and authorization integrated with secure JWT tokens stored in cookies.
-  - Seamless sign-in and sign-out endpoints to manage user sessions.
+  - Secure user authentication and authorization using JWT tokens stored in cookies.
+  - Seamless sign-in and sign-out endpoints for managing user sessions.
 
 ### Shopping Cart
 - **Cart Features**:
   - Add, remove, and view items in the shopping cart.
-  - Backend logic fully implemented to support real-time cart management.
+  - Backend logic fully implemented for real-time cart management.
+
+### Order Management System
+- **Order Features**:
+  - Users can place, view, and manage their orders.
+  - All order data, including order details and status, is stored in the PostgreSQL database.
+
+### Payment System
+- **Payment Integration**:
+  - Secure payment processing integrated into the application.
+  - Supports various payment methods to provide flexibility and convenience to users.
+
+### Custom Exceptions
+- **Error Handling**:
+  - Comprehensive custom exception handling implemented throughout the application.
+  - Ensures clear and user-friendly error messages for various scenarios, such as invalid input or unauthorized actions.
+
+### User Profiles
+- **Profile Management**:
+  - Personalized user profiles with features such as viewing order history and managing account details.
 
 ---
 
-## 🌱 Upcoming Features
-- **Order Management System**:
-  - Enable users to place, view, and manage their orders.
+## 🌱 Future Enhancements
 - **Admin Panel**:
-  - Comprehensive dashboard for managing products, categories, and user orders.
-- **User Profiles**:
-  - Enhance user experience with personalized order history and profile management.
+  - Develop a comprehensive dashboard for managing products, categories, and user orders.
+- **Advanced Search and Filters**:
+  - Implement advanced search capabilities for users to easily find products.
+- **Wishlist**:
+  - Allow users to save their favorite products for future purchases.
+- **Notifications**:
+  - Implement notifications for order updates and promotional offers.
+
